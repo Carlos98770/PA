@@ -29,7 +29,9 @@ Questão 2:
 >
 Questão 3:
 <
-
+	i = (*&)j; o certo seria *&j, não pode haver os ()
+	q = *p; não se pode atribuir um valor a um ponteiro
+	
 
 
 
