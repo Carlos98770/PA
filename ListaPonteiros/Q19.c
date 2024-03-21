@@ -1,3 +1,9 @@
+/*
+Nome: <Carlos Eduardo Medeiros da Silva>
+Matricula: <20220010155>
+
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -19,14 +25,17 @@ void prencherVetor(int *vet, size_t n ){
 void imprimirVetor( int *vet, size_t n){
     for(int i = 0; i < n; i++ )
         printf("%d " , vet[i]);
+    
+    printf(" \n");
 }
+    
 
 
 int main(){
 
     printf("digite o tamanho do vetor: \n");
-    size_t n;
-    scanf("%zu", &n);
+    int n;
+    scanf("%d", &n);
     int *vet1;
     int *vet2;
     int *resultado;
@@ -41,7 +50,7 @@ int main(){
     prencherVetor(vet2 , n);
     
     soma_vetores(vet1, vet2, resultado, n);
-    printf("Elemento do vetor resultante: ");
+    printf("Elementos do vetor resultante: ");
     imprimirVetor(resultado,n);
     
     free(vet1);
