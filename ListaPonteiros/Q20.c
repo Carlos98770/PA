@@ -59,8 +59,14 @@ void liberarMatriz(int **x){
 
 
 int main(void){
-    int nla = 2, nca = 2, ncb = 2;
+    int nla,nca,ncb;
 
+    printf("Numero de Linhas da Matriz A: \n");
+    scanf("%d" , &nla);
+    printf("Numero de colunas da Matriz A: \n");
+    scanf("%d" , &nca);
+    printf("Numero de colunas da Matriz B: \n");
+    scanf("%d" , &ncb);
 
     int **a = alocarMatriz(nla,nca);
     int **b = alocarMatriz(nca,ncb);
@@ -73,7 +79,8 @@ int main(void){
     prencherMatriz(b,nca,ncb);
 
     multiplica_matrizes(a,b,c,nla,nca,ncb);
-
+    printf("\n");
+    printf("Resultado da Multiplicação \n");
     imprimirMatriz(c,nla,ncb);
 
     liberarMatriz(a);
