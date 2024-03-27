@@ -30,9 +30,21 @@ int **alocarMatriz(int nl, int nc){
         x[i] = x[i-1] + nc;
 
     return x;
-
-
 }
+/*
+                    &x
+void alocarMatriz2(int ***x, int nl, int nc){
+
+    *x = (int **) malloc( nl * sizeof(int *));
+    (*x)[0] = (int *) malloc( nl * nc * sizeof(int ));
+
+    for(int i = 1; i < nl; i++)
+        (*x)[i] = (*x)[i-1] + nc;
+}
+
+*/
+
+
 void prencherMatriz(int **x, int nl, int nc){
     for(int i = 0; i < nl; i++)
         for(int j = 0; j < nc; j++){
