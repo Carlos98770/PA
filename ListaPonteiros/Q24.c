@@ -43,7 +43,7 @@ int main() {
         usando o deslocamento a esquerda é possivel concatenar os valores da matriz na variavel a
         o a na memoria armazena 64 bits ou seja : 00......000
         quando o deslocamento é realizado,
-        os bits sao deslocados para direito e é acresentado um 0 no ultimo bit, e agora realizo um or bit a bit para o valor da matriz ser adicionado na variavel a.
+        os bits sao deslocados para esquerda e é acresentado um 0 no ultimo bit, e agora realizo um or bit a bit para o valor da matriz ser adicionado na variavel a.
         e assim faço para todos os casos
 
         Assim cada grupo de 8 bits da variavel int armazena cada linha da matriz
