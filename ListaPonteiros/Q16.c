@@ -12,55 +12,36 @@ int compare( const void* a, const void* b){
 
 }
 
-void prencherVetor(void *x, int n, int tipo){
-    if(tipo == 0){
-        int *vet = (int *)x;
-        for(int i = 0; i < n; i++){
-            int p;
-            scanf("%d" , &p);
-            vet[i] = p;
-        }
-    }
-    else{
-        float *vet = (float *)x;
-        for(int i = 0; i < n; i++){
-            float p;
-            scanf("%f" , &p);
-            vet[i] = p;
-        }
-
+void prencherVetor(float *x, int n){
+    float *vet = (float *)x;
+    for(int i = 0; i < n; i++){
+        float p;
+        scanf("%f" , &p);
+        vet[i] = p;
     }
 
 }
 
-void imprimirVetor(void* x, int n, int tipo){
-    if(tipo == 0){
-        int *vet = (int*) x;
-        for(int i = 0; i < n; i++ )
-            printf("%d " , vet[i]);
-    
-        printf(" \n");
-        
-    }
-    else{
-        float *vet = (float*) x;
-        for(int i = 0; i < n; i++ )
-            printf("%.2f " , vet[i]);
-    
-        printf(" \n");
-        
-    }
+
+
+void imprimirVetor(float* x, int n){
+    float *vet = (float*) x;
+    for(int i = 0; i < n; i++ )
+        printf("%.2f " , vet[i]);
+
+    printf(" \n");
     
 }
+    
 
 int main(void){
-    printf("Tamanho do vetor: \n")
-    int n;  
+    printf("Tamanho do vetor: \n");
+    int n;
     scanf("%d" , &n);
 
     float *x;
     x = (float *) malloc(n * sizeof(float));  //Fazendo a alocação dinâmica
-    prencherVetor(x,n,1); //Prenchendo o vetor
+    prencherVetor(x,n); //Prenchendo o vetor
 
     qsort(x,n,sizeof(float),compare);   
     /*
@@ -70,7 +51,7 @@ int main(void){
     */
 
 
-    imprimirVetor(x,n,1); //imprimir o vetor
+    imprimirVetor(x,n); //imprimir o vetor
 
     free(x); //libera a memória
 

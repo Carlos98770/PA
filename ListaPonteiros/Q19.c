@@ -14,47 +14,21 @@ void soma_vetores(int *vet1, int *vet2, int *resultado,int n){
 }
 
 
-void prencherVetor(void *x, int n, int tipo){
-    if(tipo == 0){
-        int *vet = (int *)x;
-        for(int i = 0; i < n; i++){
-            
-            int p;
-            scanf("%d" , &p);
-            vet[i] = p;
+void prencherVetor(int *x, int n){
+    for(int i = 0; i < n; i++){
+        int p;
+        scanf("%d" , &p);
+        x[i] = p;
             
         }
-    }
-    else{
-        float *vet = (float *)x;
-        for(int i = 0; i < n; i++){
-            float p;
-            scanf("%f" , &p);
-            vet[i] = p;
-        }
-
-    }
-
 }
 
-void imprimirVetor(void* x, int n, int tipo){
-    if(tipo == 0){
-        int *vet = (int*) x;
+void imprimirVetor(int* x, int n, int tipo){
         for(int i = 0; i < n; i++ )
-            printf("%d " , vet[i]);
+            printf("%d " , x[i]);
     
         printf(" \n");
-        
-    }
-    else{
-        float *vet = (float*) x;
-        for(int i = 0; i < n; i++ )
-            printf("%.2f " , vet[i]);
-    
-        printf(" \n");
-        
-    }
-    
+       
 }
     
 
@@ -73,9 +47,9 @@ int main(){
     resultado = (int *)malloc( n * sizeof(int));
 
     printf("Elemento de v1: \n");
-    prencherVetor(vet1 , n,0);
+    prencherVetor(vet1 , n);
     printf("Elemento de v2: \n");
-    prencherVetor(vet2 , n,0);
+    prencherVetor(vet2 , n);
     
     soma_vetores(vet1, vet2, resultado, n);
     printf("Elementos do vetor resultante: ");

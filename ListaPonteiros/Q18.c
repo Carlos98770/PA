@@ -8,75 +8,39 @@ int compare( const void* a,const  void* b){
    
 }
 
-void prencherVetor(void *x, int n, int tipo){
-    if(tipo == 0){
-        int *vet = (int *)x;
-        for(int i = 0; i < n; i++){
-            
-            int p;
-            scanf("%d" , &p);
-            vet[i] = p;
-            
-        }
-    }
-    else{
-        float *vet = (float *)x;
-        for(int i = 0; i < n; i++){
-            float p;
-            scanf("%f" , &p);
-            vet[i] = p;
-        }
-
-    }
-
-}
-
-void imprimirVetor(void* x, int n, int tipo){
-    if(tipo == 0){
-        int *vet = (int*) x;
-        for(int i = 0; i < n; i++ )
-            printf("%d " , vet[i]);
-    
-        printf(" \n");
-        
-    }
-    else{
-        float *vet = (float*) x;
-        for(int i = 0; i < n; i++ )
-            printf("%.2f " , vet[i]);
-    
-        printf(" \n");
+void prencherVetor(int *x, int n){
+    for(int i = 0; i < n; i++){
+        x[i] = rand();
         
     }
     
 }
 
-void ordenar(void *x, int n,int tipo){
-    if(tipo == 0){
-        int *vet = (int*)x;
-        for(int i = 0; i < n;i++)
-            for(int j = i+1; j < n;j++)
-                if(vet[i] > vet[j]){
-                    int aux = vet[j];
-                    vet[j] = vet[i];
-                    vet[i] = aux;
-                }
+void imprimirVetor(int* x, int n){
+    for(int i = 0; i < n; i++ )
+        printf("%d " , x[i]);
+
+    printf(" \n");
+        
+    }
+    
 
 
-    }else{                                      
-        float *vet = (float*)x;
-        for(int i = 0; i < n;i++)
-            for(int j = i+1; j < n;j++)
-                if(vet[i] > vet[j]){
-                    float aux = vet[j];
-                    vet[j] = vet[i];
-                    vet[i] = aux;
-                }
+void ordenar(int *x, int n){
+    
+    for(int i = 0; i < n;i++)
+        for(int j = i+1; j < n;j++)
+            if(x[i] > x[j]){
+                int aux = x[j];
+                x[j] = x[i];
+                x[i] = aux;
+            }
+
 
     }
 
     
-}
+
 
 
 int main(void){
@@ -89,7 +53,7 @@ int main(void){
     int n;
     scanf("%d" , &n);
     x = (int *)malloc( n * sizeof(int));
-    prencherVetor(x,n,0);
+    prencherVetor(x,n);
 
 
     start = clock();
@@ -100,7 +64,7 @@ int main(void){
     tempo1 = ((float) end - start)/CLOCKS_PER_SEC;
 
     start = clock();
-    ordenar(x,n,0);
+    ordenar(x,n);
     end = clock();
 
     tempo2 = ((float) end - start)/CLOCKS_PER_SEC;
