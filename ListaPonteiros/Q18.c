@@ -24,8 +24,6 @@ void imprimirVetor(int* x, int n){
         
     }
     
-
-
 void ordenar(int *x, int n){
     
     for(int i = 0; i < n;i++)
@@ -39,13 +37,8 @@ void ordenar(int *x, int n){
 
     }
 
-    
-
-
-
 int main(void){
     clock_t start,end;
-    start = clock();
     float tempo1,tempo2;
 
     int *x;
@@ -61,7 +54,7 @@ int main(void){
     end = clock();
 
 
-    tempo1 = ((float) end - start)/CLOCKS_PER_SEC;
+    tempo1 = ((float) end - start)/CLOCKS_PER_SEC; // dividindo pelo ciclo de clock para obter a resposta em segundos
 
     start = clock();
     ordenar(x,n);

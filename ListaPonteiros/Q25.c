@@ -1,22 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+
 
 int ***alocarMatriz(int np,int nl,int nc){
-    int ***m;
-    np = 2;
-    nl = 3;
-    nc = 4;
-    m = (int ***) malloc( np * sizeof(int **));
 
-    m[0] = (int **) malloc(np * nl *sizeof(int*));
-    m[0][0] = (int *) malloc (np*nl*nc *sizeof(int));
+    int ***m;
+    m = (int ***) malloc( np * sizeof(int **)); //Reservando o vetor principal
+
+    m[0] = (int **) malloc(np * nl *sizeof(int*)); // Reservando o vetor secundário
+    m[0][0] = (int *) malloc (np*nl*nc *sizeof(int));  //Reservando o vetor Terciário
 
     for(int i =1; i < np;i++)
-        m[i] = m[i-1] + nl;
+        m[i] = m[i-1] + nl;   // alocando a 2D
 
-    for(int i = 0; i < np; i++)
-        for(int j = 0; j < np*nl;j++)
-            m[i][j] = m[0][0] + j*nc;
+                                        
+    for(int j = 1; j < np*nl;j++)
+        m[0][j] = m[0][j-1] + j*nc; // alocando a 3D
 
     
     return m;
@@ -26,6 +26,7 @@ int ***alocarMatriz(int np,int nl,int nc){
 
 
 void prencherMatriz(int ***m,int np,int nl,int nc){
+     srand(1);
     for(int i =0; i < np;i++)
         for(int j =0; j < nl;j++)
             for(int k =0; k < nc;k++)
@@ -33,6 +34,14 @@ void prencherMatriz(int ***m,int np,int nl,int nc){
 
 
 
+}
+void imprimirPlano(int ***matriz, int plano, int nl, int nc) {
+    for (int i = 0; i < nl; i++) {
+        for (int j = 0; j < nc; j++) {
+            printf("%d ", matriz[i][j][plano]);
+        }
+        printf("\n");
+    }
 }
 
 int main(void){
@@ -45,22 +54,25 @@ int main(void){
     int ***m = alocarMatriz(np,nl,nc);
     prencherMatriz(m,np,nl,nc);
 
-
-    printf("PLANO XY \n");
-    for(int i = 0; i< np;i++){
-        for(int j =0 ; j< nl;j++)
-           printf("%d" , *(m[i][j]));
-
-        printf("\n");
-    }
-
+                                                    // x  y   
+    //exemplo de imprimir um plano, imprimir xy logo m[i][j][fixado]
+    //imprimir outro plano tem que modificar os argumentos da função
     
+    imprimirPlano(m,0,np,nl);
+
+    //Acessando a matriz e modificando um valor
+
+    m[0][2][0] = 300;
+
+    printf("\n");
+    imprimirPlano(m,0,np,nl);
+
 
 
 ///liberar memoria
-
-    free(m[0]);
-    free(m);    
+    free(m[0][0]); //3D
+    free(m[0]);   //2D
+    free(m);     //1D
     
 
     return 0;
