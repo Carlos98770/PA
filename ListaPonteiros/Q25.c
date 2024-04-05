@@ -16,7 +16,7 @@ int ***alocarMatriz(int np,int nl,int nc){
 
                                         
     for(int j = 1; j < np*nl;j++)
-        m[0][j] = m[0][j-1] + j*nc; // alocando a 3D
+        m[0][j] = m[0][j-1] + nc; // alocando a 3D
 
     
     return m;
