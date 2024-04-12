@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1712747599 source:c:\users\aluno.1431c0602571d0w\documents\aula03poo\main.cpp
+	<iostream>
+	"vetor.h"
+
+1712747623 c:\users\aluno.1431c0602571d0w\documents\aula03poo\vetor.h
+	<iostream>
+

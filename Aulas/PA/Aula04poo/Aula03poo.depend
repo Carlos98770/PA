@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1712919280 source:c:\users\aluno.1431c0602571d0w\documents\aula03poo\main.cpp
+	<iostream>
+	"vetor2d.h"
+
+1712748439 c:\users\aluno.1431c0602571d0w\documents\aula03poo\vetor.h
+	<iostream>
+	<cmath>
+
+1712919956 source:c:\users\aluno.1431c0602571d0w\documents\aula03poo\vetor2d.cpp
+	<iostream>
+	<cmath>
+	"vetor2d.h"
+
+1712918958 c:\users\aluno.1431c0602571d0w\documents\aula03poo\vetor2d.h
+
