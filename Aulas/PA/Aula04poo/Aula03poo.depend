@@ -3,9 +3,13 @@
 	<iostream>
 	"vetor2d.h"
 
+1712919956 "
+
 1712748439 c:\users\aluno.1431c0602571d0w\documents\aula03poo\vetor.h
 	<iostream>
 	<cmath>
+
+1712748439 
 
 1712919956 source:c:\users\aluno.1431c0602571d0w\documents\aula03poo\vetor2d.cpp
 	<iostream>
@@ -13,4 +17,15 @@
 	"vetor2d.h"
 
 1712918958 c:\users\aluno.1431c0602571d0w\documents\aula03poo\vetor2d.h
+
+1713284709 source:/home/LAB25EC/Documentos/PA_DCA1202/Aulas/PA/Aula04poo/vetor2d.cpp
+	<iostream>
+	<cmath>
+	"vetor2d.h"
+
+1713285243 /home/LAB25EC/Documentos/PA_DCA1202/Aulas/PA/Aula04poo/vetor2d.h
+
+1713284782 source:/home/LAB25EC/Documentos/PA_DCA1202/Aulas/PA/Aula04poo/main.cpp
+	<iostream>
+	"vetor2d.h"
 

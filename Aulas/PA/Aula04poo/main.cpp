@@ -3,17 +3,17 @@
 
 int main()
 {
-    Vetor2d v;
-    v.setX(0);
-    v.setY(-1);
-    v.print();
-    float norma = v.norma();
+    Vetor2d v1,v2(3,5);
+    v1.setX(0);
+    v1.setY(-1);
 
-    std::cout << "Norma: " << norma << std::endl;
+    v1.print();
+    v2.print();
 
-    float angulo = v.angulo();
+    v2.norma();
 
-    std::cout << "Angulo com o eixo x(Graus): " << angulo << std::endl;
+
+
 
 
     return 0;
