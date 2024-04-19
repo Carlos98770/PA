@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1713550271 source:/home/LAB25EP/Documentos/PA_DCA1202/ProjetoEscultor/Escultor/main.cpp
+	<iostream>
+
+1713550532 source:/home/LAB25EP/Documentos/PA_DCA1202/ProjetoEscultor/Escultor/src/Sculptor.cpp
+	"Sculptor.h"
+
+1713550523 /home/LAB25EP/Documentos/PA_DCA1202/ProjetoEscultor/Escultor/include/Sculptor.h
+
